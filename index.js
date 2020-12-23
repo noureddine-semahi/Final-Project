@@ -11,6 +11,8 @@ app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }))
 app.use(cors());
 
 app.use('/posts', postRoutes);
+const routes = require("./routes");
+app.use(routes);
 
 const CONNECTION_URL = 'mongodb+srv://kabyldorado:Drowssap2020@cluster0.kjpdv.mongodb.net/kabyldorado_db?retryWrites=true&w=majority';
 const PORT = process.env.PORT|| 5000;
